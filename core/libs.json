@@ -160,11 +160,13 @@
       "index.global.min.js"
     ]
   },
-  "turbo": {
-    "npm": "@hotwired/turbo",
+  "driver.js": {
+    "npm": "driver.js",
     "js": [
-      "dist/turbo.es2017-umd.js"
+      "dist/driver.js.iife.js"
     ],
-    "head": true
+    "css": [
+      "dist/driver.css"
+    ]
   }
 }

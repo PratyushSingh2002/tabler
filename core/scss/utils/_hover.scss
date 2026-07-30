@@ -1,3 +1,5 @@
+@use '../config' as *;
+
 %hover-animation {
   transition: transform 0.3s ease;
 
@@ -40,7 +42,7 @@
 
 .hover-rotate-start {
   @extend %hover-animation;
-  
+
   &:hover {
     transform: rotate(-4deg);
   }

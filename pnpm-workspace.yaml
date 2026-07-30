@@ -2,4 +2,13 @@ packages:
   - core
   - preview
   - docs
-  - 'shared/*'
+  - shared
+
+allowBuilds:
+  '@parcel/watcher': false
+  core-js: false
+  core-js-pure: false
+  esbuild: false
+  sharp: false
+
+minimumReleaseAge: 1440

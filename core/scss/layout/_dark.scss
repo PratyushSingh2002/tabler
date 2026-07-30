@@ -1,10 +1,12 @@
-@use "sass:color";
+@use 'sass:color';
 
 // stylelint-disable declaration-no-important
 
+@use '../config' as *;
+
 @if $enable-dark-mode {
   :root {
-    &:not(.theme-dark):not([data-bs-theme="dark"]) {
+    &:not(.theme-dark):not([data-bs-theme='dark'], [data-theme='dark']) {
       .hide-theme-light {
         display: none !important;
       }
@@ -15,7 +17,8 @@
     }
 
     &.theme-dark,
-    &[data-bs-theme="dark"] {
+    &[data-bs-theme='dark'],
+    &[data-theme='dark'] {
       .hide-theme-dark {
         display: none !important;
       }
@@ -25,7 +28,6 @@
       }
     }
   }
-
 
   @include color-mode(dark, true) {
     color-scheme: dark;
@@ -37,6 +39,7 @@
     --#{$prefix}emphasis-color-rgb: #{to-rgb($body-emphasis-color-dark)};
 
     --#{$prefix}bg-forms: var(--#{$prefix}gray-900);
+    --#{$prefix}bg-forms-disabled: var(--#{$prefix}gray-800);
     --#{$prefix}bg-surface: var(--#{$prefix}gray-800);
     --#{$prefix}bg-surface-inverted: var(--#{$prefix}gray-100);
     --#{$prefix}bg-surface-secondary: var(--#{$prefix}gray-900);
@@ -48,16 +51,12 @@
     --#{$prefix}link-hover-color: color-mix(in srgb, var(--#{$prefix}primary), black 20%);
 
     --#{$prefix}active-bg: #{$lighten-dark};
-    --#{$prefix}disabled-color: #{color-transparent(var(--#{$prefix}body-color), .4)};
+    --#{$prefix}disabled-color: #{color-transparent(var(--#{$prefix}body-color), 0.4)};
 
     --#{$prefix}border-color: var(--#{$prefix}gray-700);
-    --#{$prefix}border-color-translucent: var(
-      --#{$prefix}dark-mode-border-color-translucent
-    );
+    --#{$prefix}border-color-translucent: var(--#{$prefix}dark-mode-border-color-translucent);
     --#{$prefix}border-dark-color: var(--#{$prefix}dark-mode-border-dark-color);
-    --#{$prefix}border-active-color: var(
-      --#{$prefix}dark-mode-border-active-color
-    );
+    --#{$prefix}border-active-color: var(--#{$prefix}dark-mode-border-active-color);
 
     --#{$prefix}btn-color: #{$darken-dark};
 
@@ -68,7 +67,7 @@
     }
   }
 
-  body[data-bs-theme=dark] [data-bs-theme=light] {
-    @extend [data-bs-theme=dark];
-  }
+  // The global `@extend [data-bs-theme='dark']` for light-scoped subtrees
+  // inside a dark body lives in `_extends.scss` — with the module system it
+  // must have every dark-styling module upstream.
 }

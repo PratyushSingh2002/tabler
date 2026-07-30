@@ -1,3 +1,5 @@
+@use '../config' as *;
+
 textarea {
   &[cols] {
     height: auto;
@@ -14,15 +16,15 @@ Form label
 
   &.required {
     &:after {
-      content: "*";
-      margin-left: 0.25rem;
+      content: '*';
+      margin-inline-start: 0.25rem;
       color: $red;
     }
   }
 }
 
 .form-label-description {
-  float: right;
+  float: inline-end;
   font-weight: var(--#{$prefix}font-weight-normal);
   color: $form-secondary-color;
 }
@@ -106,7 +108,7 @@ Form control
 }
 
 .form-control-rounded {
-  border-radius: 10rem;
+  @include border-radius(var(--#{$prefix}border-radius-pill));
 }
 
 .form-control-flush {
@@ -127,7 +129,7 @@ Form control
   margin-bottom: 1rem;
   background: var(--#{$prefix}bg-surface-secondary);
   border: var(--#{$prefix}border-width) var(--#{$prefix}border-style) var(--#{$prefix}border-color);
-  border-radius: var(--#{$prefix}border-radius);
+  @include border-radius(var(--#{$prefix}border-radius));
 }
 
 fieldset:empty {
@@ -139,7 +141,7 @@ Form help
  */
 .form-help {
   display: inline-flex;
-  font-weight: var(--#{$prefix}font-weight-bold);
+  font-weight: var(--#{$prefix}font-weight-semibold);
   align-items: center;
   justify-content: center;
   width: 1.125rem;
@@ -151,7 +153,7 @@ Form help
   cursor: pointer;
   user-select: none;
   background: var(--#{$prefix}gray-100);
-  border-radius: $border-radius-pill;
+  @include border-radius(var(--#{$prefix}border-radius-pill));
   @include transition(background-color $transition-time, color $transition-time);
 
   &:hover,
@@ -166,7 +168,7 @@ Input group
  */
 .input-group {
   box-shadow: $input-box-shadow;
-  border-radius: $input-border-radius;
+  @include border-radius($input-border-radius);
 
   .form-control,
   .btn {
@@ -181,7 +183,7 @@ Input group
 .input-group-flat {
   &:focus-within {
     box-shadow: $input-focus-box-shadow;
-    border-radius: $input-border-radius;
+    @include border-radius($input-border-radius);
 
     .form-control,
     .input-group-text {
@@ -196,11 +198,11 @@ Input group
     }
 
     &:not(:last-child) {
-      border-right: 0;
+      border-inline-end: 0;
     }
 
     &:not(:first-child) {
-      border-left: 0;
+      border-inline-start: 0;
     }
   }
 
@@ -210,13 +212,13 @@ Input group
     @include transition($input-transition);
 
     &:first-child {
-      padding-right: 0;
-      border-right: 0;
+      padding-inline-end: 0;
+      border-inline-end: 0;
     }
 
     &:last-child {
-      padding-left: 0;
-      border-left: 0;
+      padding-inline-start: 0;
+      border-inline-start: 0;
     }
   }
 }
@@ -225,15 +227,15 @@ Input group
 Upload files
  */
 .form-file-button {
-  margin-left: 0;
-  border-left: 0;
+  margin-inline-start: 0;
+  border-inline-start: 0;
 }
 
 /**
 Floating inputs
  */
 // Fix for the bug in twbs/bootstrap v5.3.3. Issue #39080. Should be fixed in v5.3.4
-label[for="floating-input"] {
+label[for='floating-input'] {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

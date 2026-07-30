@@ -3,25 +3,25 @@
   "globalEnv": [
     "NODE_ENV",
     "NEXT_PUBLIC_POSTHOG_KEY",
-    "NEXT_PUBLIC_POSTHOG_HOST"
+    "NEXT_PUBLIC_POSTHOG_HOST",
+    "DOCSEARCH_API_KEY",
+    "DOCSEARCH_APP_ID",
+    "DOCSEARCH_INDEX_NAME"
   ],
   "tasks": {
     "build": {
       "dependsOn": [
         "^build"
       ],
-      "inputs": [
-        "shared/**",
-        "preview/**"
-      ],
       "outputs": [
-        "dist/**"
+        "dist/**",
+        "demo/**"
       ],
-      "cache": false
+      "cache": true
     },
     "dev": {
       "cache": false,
-      "persistent": false
+      "persistent": true
     },
     "clean": {
       "dependsOn": [
@@ -32,7 +32,20 @@
     "bundlewatch": {
       "dependsOn": [
         "build"
-      ]
+      ],
+      "cache": true
+    },
+    "type-check": {
+      "dependsOn": [
+        "^type-check"
+      ],
+      "cache": true
+    },
+    "test": {
+      "cache": false
+    },
+    "test:coverage": {
+      "cache": false
     }
   }
 }

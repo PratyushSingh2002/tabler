@@ -1,14 +1,33 @@
 {
-  "home": {
-    "url": "",
-    "title": "Home",
-    "icon": "home"
+  "dashboards": {
+    "title": "Dashboards",
+    "icon": "home",
+    "children": {
+      "default": {
+        "url": "index.html",
+        "title": "Default"
+      },
+      "crypto": {
+        "url": "dashboard-crypto.html",
+        "title": "Crypto",
+        "badge": "New"
+      },
+      "crm": {
+        "url": "dashboard-crm.html",
+        "title": "CRM",
+        "badge": "New"
+      }
+    }
   },
   "base": {
     "title": "Interface",
     "icon": "package",
     "columns": 2,
     "children": {
+      "all-elements": {
+        "title": "All Elements",
+        "url": "all-elements.html"
+      },
       "accordion": {
         "title": "Accordion",
         "url": "accordion.html",
@@ -92,6 +111,11 @@
             "title": "Card actions",
             "badge": "New"
           },
+          "gradients": {
+            "url": "card-gradients.html",
+            "title": "Card gradients",
+            "badge": "New"
+          },
           "masonry": {
             "url": "cards-masonry.html",
             "title": "Cards Masonry"
@@ -139,9 +163,9 @@
         "url": "modals.html",
         "title": "Modals"
       },
-      "markdown": {
-        "title": "Markdown",
-        "url": "markdown.html"
+      "prose": {
+        "title": "Prose",
+        "url": "prose.html"
       },
       "navigation": {
         "url": "navigation.html",
@@ -154,6 +178,11 @@
       "pagination": {
         "url": "pagination.html",
         "title": "Pagination"
+      },
+      "patterns": {
+        "url": "patterns.html",
+        "title": "Patterns",
+        "badge": "New"
       },
       "placeholder": {
         "url": "placeholder.html",
@@ -316,7 +345,16 @@
       },
       "tasks": {
         "title": "Tasks",
-        "url": "tasks.html"
+        "children": {
+          "kanban": {
+            "title": "Kanban",
+            "url": "tasks.html"
+          },
+          "list": {
+            "title": "Task List",
+            "url": "tasks-list.html"
+          }
+        }
       },
       "text-features": {
         "title": "Text features",
@@ -452,9 +490,9 @@
         "url": "maps-vector.html",
         "title": "Map vector"
       },
-      "turbo": {
-        "url": "turbo-loader.html",
-        "title": "Turbo loader"
+      "tour": {
+        "url": "tour.html",
+        "title": "Tour"
       },
       "wysiwyg": {
         "url": "wysiwyg.html",

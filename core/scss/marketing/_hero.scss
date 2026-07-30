@@ -1,6 +1,8 @@
 //
 // Hero
 //
+@use '../config' as *;
+
 .hero {
   text-align: center;
   padding: 6.5rem 0;
@@ -44,7 +46,7 @@
 .hero-img {
   margin: 4rem auto;
   max-width: 65rem;
-  border-radius: $border-radius-lg;
+  @include border-radius($border-radius-lg);
   position: relative;
   z-index: 1;
   //box-shadow: 0 10px 15px -3px rgba($color-text, 0.1),

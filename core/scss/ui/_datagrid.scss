@@ -2,6 +2,8 @@
 // Base styles
 //
 
+@use '../config' as *;
+
 .datagrid {
   --#{$prefix}datagrid-padding: #{$datagrid-padding};
   --#{$prefix}datagrid-item-width: #{$datagrid-item-width};
@@ -13,5 +15,5 @@
 
 .datagrid-title {
   @include subheader;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }

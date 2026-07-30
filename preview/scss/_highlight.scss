@@ -10,7 +10,6 @@ pre.highlight,
   max-height: 30rem;
   margin: 1.5rem 0;
   overflow: auto;
-  border-radius: var(--#{$prefix}border-radius);
 }
 
 .highlight {
@@ -21,10 +20,29 @@ pre.highlight,
     padding: 0 !important;
   }
 
-  .c, .c1 { color: $color-highlight-gray; }
-  .nt, .nc, .nx { color: $color-highlight-red; }
-  .na, .p { color: $color-highlight-yellow; }
-  .s, .dl, .s2 { color: $color-highlight-green; }
-  .k { color: $color-highlight-blue; }
-  .s1, .mi { color: $color-highlight-purple; }
+  .c,
+  .c1 {
+    color: $color-highlight-gray;
+  }
+  .nt,
+  .nc,
+  .nx {
+    color: $color-highlight-red;
+  }
+  .na,
+  .p {
+    color: $color-highlight-yellow;
+  }
+  .s,
+  .dl,
+  .s2 {
+    color: $color-highlight-green;
+  }
+  .k {
+    color: $color-highlight-blue;
+  }
+  .s1,
+  .mi {
+    color: $color-highlight-purple;
+  }
 }
