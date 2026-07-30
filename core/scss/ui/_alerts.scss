@@ -87,10 +87,8 @@
   .alert-icon {
     color: inherit;
   }
-}
 
-
-.alert-action {
+  .alert-action {
     color: inherit;
     text-decoration: underline;
     display: inline;
@@ -98,6 +96,8 @@
     &:hover {
       text-decoration: none;
     }
+  }
+}
 
 .alert-minor {
   background: transparent;
@@ -108,6 +108,4 @@
   .alert-#{$name} {
     --#{$prefix}alert-color: var(--#{$prefix}#{$name});
   }
-}
-
 }
